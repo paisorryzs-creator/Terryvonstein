@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasaysayan ng Pilipinas | Interaktibong Timeline</title>
+<style>
+:root{--bg:#f5f2ea;--paper:#fffdf8;--ink:#202b35;--muted:#66717b;--line:#d8d1c3;--red:#9c3d35;--blue:#315d78;--gold:#a87925;--shadow:0 12px 32px #18212b12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+header{padding:56px 22px 44px;text-align:center;background:#202b35;color:#fff}
+.eyebrow{font:700 .75rem Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#e7c98b}
+h1{font-size:clamp(2rem,6vw,4rem);line-height:1.08;margin:12px auto;max-width:900px}
+header p{font:1rem/1.7 Arial,sans-serif;color:#e1e5e8;max-width:700px;margin:16px auto 0}
+main{max-width:1050px;margin:auto;padding:30px 20px 70px}
+.intro{max-width:780px;margin:0 auto 28px;text-align:center;color:var(--muted);font:1rem/1.7 Arial,sans-serif}
+.controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:24px 0}
+button,input{font:inherit}
+.tab,.action{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:11px 16px;border-radius:999px;cursor:pointer;transition:.2s}
+.tab[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab:hover,.action:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+.search-wrap{max-width:520px;margin:0 auto 32px}
+#search{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);font:1rem Arial,sans-serif;outline-color:var(--blue)}
+.period{margin:34px 0 18px;padding:15px 18px;border-left:5px solid var(--gold);background:#eee8da;border-radius:0 12px 12px 0}
+.period h2{margin:0;font-size:1.45rem}.period p{margin:4px 0 0;color:var(--muted);font: .92rem Arial,sans-serif}
+.timeline{position:relative;margin-left:16px;padding-left:30px;border-left:2px solid var(--line)}
+.event{position:relative;margin:0 0 18px;background:var(--paper);border:1px solid #e8e1d5;border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.event:before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--red);left:-38px;top:24px;border:3px solid var(--bg)}
+.event summary{list-style:none;cursor:pointer;padding:18px 20px;display:grid;grid-template-columns:105px 1fr auto;gap:12px;align-items:center}
+.event summary::-webkit-details-marker{display:none}
+.year{font:bold 1rem Arial,sans-serif;color:var(--red);white-space:nowrap}
+.event h3{font-size:1.12rem;line-height:1.3;margin:0}
+.hint{font: .8rem Arial,sans-serif;color:var(--muted)}
+.chev{font:1.3rem Arial,sans-serif;color:var(--muted);transition:transform .2s}
+details[open] .chev{transform:rotate(180deg)}
+.detail{padding:0 20px 20px 137px;color:#414b54}
+.detail p{margin:0 0 10px}
+.tag{display:inline-block;background:#f0e6d4;color:#684b1c;border-radius:5px;padding:3px 8px;font:700 .72rem Arial,sans-serif}
+.empty{text-align:center;padding:35px;color:var(--muted);display:none;font-family:Arial,sans-serif}
+footer{text-align:center;padding:24px;color:var(--muted);font: .85rem Arial,sans-serif;border-top:1px solid var(--line)}
+@media(max-width:600px){header{padding:42px 18px}.event summary{grid-template-columns:1fr auto;gap:5px}.year{grid-column:1}.event h3{grid-column:1}.chev{grid-column:2;grid-row:1/3}.detail{padding:0 18px 18px}.timeline{margin-left:8px;padding-left:23px}.event:before{left:-31px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Paglalakbay sa nakaraan</div>
+  <h1>Kasaysayan ng Pilipinas</h1>
+  <p>Balikan ang mahahalagang pangyayari sa kasaysayan ng Pilipinas mula sa panahon ng mga Espanyol hanggang sa pananakop ng mga Amerikano at Hapones.</p>
+</header>
+<main>
+  <p class="intro">Pumili ng panahon o maghanap ng isang pangyayari. Pagkatapos ay pindutin ang tala upang malaman kung ano ang nangyari at kung bakit ito mahalaga sa ating kasaysayan.</p>
+  <nav class="controls" aria-label="Pumili ng panahon">
+    <button class="tab" data-filter="all" aria-pressed="true">Lahat ng panahon</button>
+    <button class="tab" data-filter="spanish" aria-pressed="false">Panahon ng Espanya</button>
+    <button class="tab" data-filter="american" aria-pressed="false">Panahon ng Amerikano</button>
+    <button class="tab" data-filter="japanese" aria-pressed="false">Panahon ng Hapon</button>
+  </nav>
+  <div class="search-wrap"><input id="search" type="search" placeholder="Maghanap ng taon o pangyayari..." aria-label="Maghanap ng pangyayari"></div>
+  <section class="period" data-period="spanish"><h2>Panahon ng Kolonyalismong Espanyol</h2><p>1565–1898 · Mahigit tatlong siglo sa ilalim ng pamamahalang Espanyol</p></section>
+  <div class="timeline">
+    <details class="event" data-period="spanish" data-search="1521 magellan homonhon pagdating"><summary><span class="year">1521</span><h3>Pagdating ni Ferdinand Magellan</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Marso 1521 ay dumating si Ferdinand Magellan sa kapuluan. Nakipag-ugnayan ang kanyang pangkat sa ilang pamayanan. Gayunman ay nauwi sa labanan ang kanilang pagdating sa Mactan kung saan natalo at napatay si Magellan ni Lapulapu at ng kanyang mga mandirigma.</p><span class="tag">Unang ekspedisyong Espanyol</span></div></details>
+    <details class="event" data-period="spanish" data-search="1565 miguel lopez legazpi cebu kolonya"><summary><span class="year">1565</span><h3>Pagsisimula ng permanenteng pananakop ng Espanya</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1565 ay itinatag ni Miguel López de Legazpi ang unang permanenteng pamayanang Espanyol sa Cebu. Dahil dito ay nagsimula ang tuloy-tuloy na pamamahala ng Espanya sa kapuluan.</p><span class="tag">Kolonyal na pamahalaan</span></div></details>
+    <details class="event" data-period="spanish" data-search="1571 maynila kabisera legazpi"><summary><span class="year">1571</span><h3>Pagsakop sa Maynila</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1571 ay nasakop ng mga Espanyol ang Maynila at ginawa nila itong sentro ng pamahalaan at kalakalan. Bukod dito ay naging mahalagang daungan ang lungsod para sa kalakalang pang-Asya at sa rutang Maynila–Acapulco.</p><span class="tag">Maynila bilang kabisera</span></div></details>
+    <details class="event" data-period="spanish" data-search="1762 1764 british manila occupation pitong taon"><summary><span class="year">1762–1764</span><h3>Pananakop ng mga Briton sa Maynila</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Digmaang Pitong Taon ay nasakop ng mga Briton ang Maynila. Nanatili sila roon hanggang 1764. Pagkaraan nito ay ibinalik ang lungsod sa pamamahalang Espanyol sa ilalim ng isang kasunduang pangkapayapaan.</p><span class="tag">Pansamantalang pananakop</span></div></details>
+    <details class="event" data-period="spanish" data-search="1872 cavite mutiny gomburza martir"><summary><span class="year">1872</span><h3>Pag-aalsa sa Cavite at pagbitay sa Gomburza</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1872 ay naganap ang pag-aalsa sa Cavite. Pagkatapos nito ay binitay sina Padre Mariano Gómez, José Burgos, at Jacinto Zamora na kilala bilang Gomburza. Dahil sa kanilang pagkamatay ay lalo pang lumakas ang damdaming makabayan ng mga Pilipino.</p><span class="tag">Pag-usbong ng nasyonalismo</span></div></details>
+    <details class="event" data-period="spanish" data-search="1892 la liga filipina jose rizal propaganda"><summary><span class="year">1892</span><h3>Pagtatatag ng La Liga Filipina</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1892 ay itinatag ni José Rizal ang La Liga Filipina upang pag-isahin ang mga Pilipino at isulong ang mapayapang pagbabago. Gayunman ay hindi nagtagal ang samahan dahil ipinatapon si Rizal sa Dapitan.</p><span class="tag">Kilusan para sa reporma</span></div></details>
+    <details class="event" data-period="spanish" data-search="1896 himagsikan katipunan andres bonifacio"><summary><span class="year">1896</span><h3>Pagsiklab ng Himagsikang Pilipino</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1896 ay nagsimula ang Himagsikang Pilipino sa pamumuno ng Katipunan at ni Andrés Bonifacio. Layunin nitong wakasan ang pamamahalang Espanyol. Di naglaon ay lumawak ang labanan sa iba't ibang bahagi ng bansa.</p><span class="tag">Rebolusyon</span></div></details>
+    <details class="event" data-period="spanish" data-search="1898 deklarasyon kalayaan june 12 kawit aguinaldo"><summary><span class="year">1898</span><h3>Pagpapahayag ng Kalayaan ng Pilipinas</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Hunyo 12, 1898 ay ipinahayag ni Emilio Aguinaldo ang kalayaan ng Pilipinas sa Kawit, Cavite. Gayunman ay hindi kinilala ng Espanya at Estados Unidos ang ganap na kalayaan ng bansa. Kaya nagpatuloy ang pakikibaka ng mga Pilipino para sa tunay na kasarinlan.</p><span class="tag">Hunyo 12 · Araw ng Kalayaan</span></div></details>
+  </div>
+  <section class="period" data-period="american"><h2>Panahon ng Pananakop ng mga Amerikano</h2><p>1898–1946 · Panahon ng pamamahalang Amerikano at paghahanda sa sariling pamahalaan</p></section>
+  <div class="timeline">
+    <details class="event" data-period="american" data-search="1898 kasunduan paris espanya estados unidos"><summary><span class="year">1898</span><h3>Kasunduan sa Paris</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Disyembre 10, 1898 ay nilagdaan ng Espanya at Estados Unidos ang Kasunduan sa Paris. Sa ilalim nito ay ipinasa ng Espanya sa Estados Unidos ang kontrol sa Pilipinas. Nangyari ito kahit na naipahayag na ng mga Pilipino ang kanilang kalayaan.</p><span class="tag">Paglipat ng kapangyarihan</span></div></details>
+    <details class="event" data-period="american" data-search="1899 digmaang pilipino amerikano february 4"><summary><span class="year">1899</span><h3>Pagsisimula ng Digmaang Pilipino-Amerikano</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Pebrero 4, 1899 ay nagsimula ang Digmaang Pilipino-Amerikano matapos ang sagupaan ng mga sundalong Pilipino at Amerikano sa Maynila. Dahil dito ay lumawak ang labanan habang patuloy na ipinaglalaban ng mga Pilipino ang kanilang kalayaan.</p><span class="tag">Pakikibaka para sa kalayaan</span></div></details>
+    <details class="event" data-period="american" data-search="1901 balangiga bataan aguinaldo capture pamahalaang sibil taft"><summary><span class="year">1901</span><h3>Paghuli kay Emilio Aguinaldo at pagtatatag ng pamahalaang sibil</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Marso 1901 ay nahuli si Emilio Aguinaldo ng mga puwersang Amerikano. Pagkaraan ng ilang buwan ay itinatag ang pamahalaang sibil ng Estados Unidos sa Pilipinas. Pinamunuan ito ni William Howard Taft bilang unang gobernador-sibil.</p><span class="tag">Pamahalaang kolonyal</span></div></details>
+    <details class="event" data-period="american" data-search="1907 unang asembliya pilipinas legislature"><summary><span class="year">1907</span><h3>Unang Asembleang Pilipino</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1907 ay binuksan ang Unang Asembleang Pilipino. Dahil dito ay nagkaroon ang mga Pilipino ng mas malawak na pagkakataong makilahok sa paggawa ng mga batas kahit nasa ilalim pa rin ng pamamahalang Amerikano.</p><span class="tag">Representasyon sa pamahalaan</span></div></details>
+    <details class="event" data-period="american" data-search="1916 jones law batas jones sariling pamahalaan"><summary><span class="year">1916</span><h3>Pagpasa ng Batas Jones</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1916 ay ipinasa ang Batas Jones. Nangako ito na kikilalanin ang kalayaan ng Pilipinas kapag mayroon nang matatag na pamahalaan. Bukod dito ay pinalawak din nito ang pakikilahok ng mga Pilipino sa paggawa ng batas.</p><span class="tag">Hakbang tungo sa kasarinlan</span></div></details>
+    <details class="event" data-period="american" data-search="1935 commonwealth manuel quezon konstitusyon"><summary><span class="year">1935</span><h3>Pagtatatag ng Komonwelt ng Pilipinas</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1935 ay naitatag ang Komonwelt ng Pilipinas bilang paghahanda sa ganap na kalayaan. Naging pangulo si Manuel L. Quezon at nagkaroon ang bansa ng sariling Konstitusyon. Sa panahong ito ay unti-unting inihanda ang Pilipinas sa pagsasarili.</p><span class="tag">Pamahalaang transisyonal</span></div></details>
+  </div>
+  <section class="period" data-period="japanese"><h2>Panahon ng Pananakop ng mga Hapones</h2><p>1941–1945 · Ikalawang Digmaang Pandaigdig sa Pilipinas</p></section>
+  <div class="timeline">
+    <details class="event" data-period="japanese" data-search="1941 december 8 hapon pearl harbor pilipinas pagsalakay"><summary><span class="year">1941</span><h3>Pagsalakay ng mga Hapones sa Pilipinas</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Disyembre 8, 1941 ay sinalakay ng mga puwersang Hapones ang Pilipinas. Nangyari ito ilang oras matapos ang pag-atake sa Pearl Harbor ayon sa oras sa Pilipinas. Dahil dito ay nagsimula ang malawakang digmaan sa bansa.</p><span class="tag">Ikalawang Digmaang Pandaigdig</span></div></details>
+    <details class="event" data-period="japanese" data-search="1942 bataan death march corregidor surrender"><summary><span class="year">1942</span><h3>Pagbagsak ng Bataan at Martsa ng Kamatayan</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Abril 9, 1942 ay bumagsak ang Bataan. Pagkatapos nito ay pinilit ng mga Hapones ang libo-libong bihag na sundalong Pilipino at Amerikano na maglakad nang malayo sa tinawag na Martsa ng Kamatayan sa Bataan. Marami sa kanila ang namatay dahil sa gutom, uhaw, sakit, at pang-aabuso.</p><span class="tag">Pagdurusa ng mga bihag</span></div></details>
+    <details class="event" data-period="japanese" data-search="1942 manila japanese occupation pamahalaan"><summary><span class="year">1942</span><h3>Pagsakop ng mga Hapones sa Maynila</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1942 ay sinakop ng mga Hapones ang Maynila at itinatag doon ang kanilang pamahalaang militar. Dahil sa pananakop ay naranasan ng mga mamamayan ang kakulangan sa pagkain, takot, sensura, at mahigpit na kontrol.</p><span class="tag">Pamahalaang militar</span></div></details>
+    <details class="event" data-period="japanese" data-search="1943 republika jose p laurel ikalawang republika"><summary><span class="year">1943</span><h3>Pagkakatatag ng Ikalawang Republika</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong 1943 ay itinatag ang Ikalawang Republika ng Pilipinas sa ilalim ni Pangulong José P. Laurel. Gayunman ay nanatili pa rin sa ilalim ng kapangyarihan at impluwensiya ng mga Hapones ang bansa.</p><span class="tag">Ikalawang Republika</span></div></details>
+    <details class="event" data-period="japanese" data-search="1944 leyte gulf landing macarthur balik pilipinas"><summary><span class="year">1944</span><h3>Pagbabalik ng mga puwersang Alyado sa Leyte</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Oktubre 20, 1944 ay lumapag sa Leyte ang mga puwersang pinamunuan ni Heneral Douglas MacArthur kasama ang mga sundalong Pilipino. Dahil dito ay nagsimula ang malawakang pagpapalaya sa bansa mula sa pananakop ng mga Hapones.</p><span class="tag">Pagpapalaya sa bansa</span></div></details>
+    <details class="event" data-period="japanese" data-search="1945 labanan manila liberation liberation philippines"><summary><span class="year">1945</span><h3>Pagpapalaya sa Maynila at malaking bahagi ng Pilipinas</h3><span class="chev">⌄</span></summary><div class="detail"><p>Mula Pebrero hanggang Marso 1945 ay naganap ang Labanan sa Maynila. Napalaya ang lungsod ngunit matindi ang pinsalang iniwan ng labanan at maraming sibilyan ang nasawi. Samantala ay nagpatuloy ang mga operasyong militar sa iba pang bahagi ng bansa hanggang sa pagsuko ng Japan.</p><span class="tag">Pagwawakas ng pananakop</span></div></details>
+    <details class="event" data-period="japanese" data-search="1946 july 4 kalayaan united states republic"><summary><span class="year">1946</span><h3>Pagkilala sa kalayaan ng Pilipinas</h3><span class="chev">⌄</span></summary><div class="detail"><p>Noong Hulyo 4, 1946 ay opisyal na kinilala ng Estados Unidos ang kalayaan ng Republika ng Pilipinas. Sa wakas ay nagtapos ang pamamahalang Amerikano at nagsimula ang bagong yugto ng Pilipinas bilang isang malayang republika.</p><span class="tag">Hulyo 4 · Kalayaan</span></div></details>
+  </div>
+  <p class="empty" id="empty">Walang nahanap na pangyayari. Subukan ang ibang salita o taon.</p>
+</main>
+<footer>Isang timeline na nagpapakita ng mahahalagang pangyayari sa kasaysayan ng Pilipinas. Pindutin ang bawat tala upang mabasa ang karagdagang detalye.</footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')], events=[...document.querySelectorAll('.event')], periods=[...document.querySelectorAll('.period')], search=document.getElementById('search'), empty=document.getElementById('empty');
+let active='all';
+function update(){
+ const q=search.value.trim().toLocaleLowerCase('tl'); let shown=0;
+ events.forEach(e=>{const matchPeriod=active==='all'||e.dataset.period===active;const matchText=!q||(e.innerText+' '+e.dataset.search).toLocaleLowerCase('tl').includes(q);const visible=matchPeriod&&matchText;e.hidden=!visible;if(visible)shown++;});
+ periods.forEach(p=>{const related=events.some(e=>e.dataset.period===p.dataset.period&&!e.hidden);p.hidden=active!=='all'&&p.dataset.period!==active||!related;});
+ empty.style.display=shown?'none':'block';
+}
+tabs.forEach(t=>t.addEventListener('click',()=>{active=t.dataset.filter;tabs.forEach(b=>b.setAttribute('aria-pressed',String(b===t)));update();}));
+search.addEventListener('input',update);
+</script>
+</body>
+</html>
